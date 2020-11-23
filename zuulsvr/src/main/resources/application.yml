@@ -21,3 +21,26 @@ zuul:
   prefix:  /api
   routes:
     organizationservice: /organization/**
+
+management:
+  endpoint:
+    health:      
+      enabled: true
+    env:
+      enabled: true
+    refresh:
+      enabled: true
+    beans:
+      enabled: true
+    routes:
+      enabled: true
+  endpoints:
+    web:      
+      exposure:        
+        include:        
+        - info
+        - env
+        - refresh
+        - beans
+        - loggers
+        - routes
